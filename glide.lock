@@ -135,7 +135,7 @@ imports:
   - digest
   - reference
 - name: github.com/docker/docker
-  version: 49bf474f9ed7ce7143a59d1964ff7b7fd9b52178
+  version: 092cba3727bb9b4a2f0e922cd6c0f93ea270e363
   subpackages:
   - namesgenerator
 - name: github.com/docker/engine-api
