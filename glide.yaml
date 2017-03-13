@@ -66,7 +66,7 @@ import:
   - acme
 - package: gopkg.in/fsnotify.v1
 - package: github.com/docker/docker
-  version: v1.13.1
+  version: v1.13.0
   subpackages:
   - namesgenerator
 - package: github.com/mattn/go-shellwords
@@ -144,12 +144,8 @@ import:
 testImport:
   - package: github.com/go-check/check
   - package: github.com/libkermit/compose
-    version: cadc5a3b83a15790174bd7fbc75ea2529785e772
     subpackages:
     - check
   - package: github.com/libkermit/docker
-    version: 55e3595409924fcfbb850811e5a7cdbe8960a0b7
   - package: github.com/libkermit/docker-check
   - package: github.com/vdemeester/shakers
-  - package: github.com/spf13/pflag
-    version: 5644820622454e71517561946e3d94b9f9db6842
