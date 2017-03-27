@@ -10,7 +10,7 @@ set -o nounset
 CWD="$(pwd)"; readonly CWD
 GLIDE_ARGS=(
   '--strip-vendor'
-  '--skip-test'
+  #'--skip-test'
 )
 GLIDE_VC_ARGS=(
   '--use-lock-file'       # `glide list` seems to miss test dependencies, e.g., github.com/mattn/go-shellwords
