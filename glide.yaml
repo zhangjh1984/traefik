@@ -141,11 +141,13 @@ import:
   - proto
 - package: github.com/rancher/go-rancher
   version: 2c43ff300f3eafcbd7d0b89b10427fc630efdc1e
+- package: github.com/spf13/pflag
+  version: d16db1e50e33dff1b6cdf37596cef36742128670
 testImport:
-  - package: github.com/go-check/check
-  - package: github.com/libkermit/compose
-    subpackages:
-    - check
-  - package: github.com/libkermit/docker
-  - package: github.com/libkermit/docker-check
-  - package: github.com/vdemeester/shakers
+- package: github.com/go-check/check
+- package: github.com/libkermit/compose
+  subpackages:
+  - check
+- package: github.com/libkermit/docker
+- package: github.com/libkermit/docker-check
+- package: github.com/vdemeester/shakers

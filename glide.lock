@@ -1,5 +1,5 @@
-hash: 53db4c490d002007ff72d7ae4280c2117a3dacf564c98328a3c6199ac4792e44
-updated: 2017-03-28T01:32:45.024981359+02:00
+hash: ff3b15084969b7f60c1e8b37ff047bee5626a70b3026330a89504bce3a1ccaf8
+updated: 2017-03-28T01:47:22.212461209+02:00
 imports:
 - name: bitbucket.org/ww/goautoneg
   version: 75cd24fc2f2c2a2088577d12123ddee5f54e0675
@@ -434,7 +434,7 @@ imports:
 - name: github.com/Sirupsen/logrus
   version: a283a10442df8dc09befd873fab202bf8a253d6a
 - name: github.com/spf13/pflag
-  version: 5644820622454e71517561946e3d94b9f9db6842
+  version: d16db1e50e33dff1b6cdf37596cef36742128670
 - name: github.com/streamrail/concurrent-map
   version: 65a174a3a4188c0b7099acbc6cfa0c53628d3287
 - name: github.com/stretchr/objx
