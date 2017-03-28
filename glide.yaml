@@ -29,7 +29,7 @@ import:
   - types/events
   - types/filters
 - package: github.com/docker/go-connections
-  version: v0.2.1
+  version: 4ccf312bf1d35e5dbda654e57a9be4c3f3cd0366
   subpackages:
   - sockets
   - tlsconfig

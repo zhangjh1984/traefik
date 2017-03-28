@@ -1,5 +1,5 @@
-hash: ff3b15084969b7f60c1e8b37ff047bee5626a70b3026330a89504bce3a1ccaf8
-updated: 2017-03-28T01:47:22.212461209+02:00
+hash: ce51c44efe7bf4cb7df165b9178e0564ee8192c6e8c000c9b663200210a67d65
+updated: 2017-03-28T02:08:04.122152269+02:00
 imports:
 - name: bitbucket.org/ww/goautoneg
   version: 75cd24fc2f2c2a2088577d12123ddee5f54e0675
@@ -222,7 +222,7 @@ imports:
   - types/time
   - types/versions
 - name: github.com/docker/go-connections
-  version: 990a1a1a70b0da4c4cb70e117971a4f0babfbf1a
+  version: 4ccf312bf1d35e5dbda654e57a9be4c3f3cd0366
   subpackages:
   - nat
   - sockets
