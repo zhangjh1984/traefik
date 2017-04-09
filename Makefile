@@ -8,6 +8,8 @@ TRAEFIK_ENVS := \
 	-e VERSION \
 	-e CODENAME
 
+INTEGRATION_DOCKER_NETWORK := traefik_integration_testing
+
 SRCS = $(shell git ls-files '*.go' | grep -v '^external/')
 
 BIND_DIR := "dist"
@@ -21,6 +23,7 @@ INTEGRATION_OPTS := $(if $(MAKE_DOCKER_HOST),-e "DOCKER_HOST=$(MAKE_DOCKER_HOST)
 
 DOCKER_BUILD_ARGS := $(if $(DOCKER_VERSION), "--build-arg=DOCKER_VERSION=$(DOCKER_VERSION)",)
 DOCKER_RUN_TRAEFIK := docker run $(INTEGRATION_OPTS) -it $(TRAEFIK_ENVS) $(TRAEFIK_MOUNT) "$(TRAEFIK_DEV_IMAGE)"
+DOCKER_RUN_TRAEFIK_INT_TESTS := docker run $(INTEGRATION_OPTS) --network=${INTEGRATION_DOCKER_NETWORK} -it $(TRAEFIK_ENVS) $(TRAEFIK_MOUNT) "$(TRAEFIK_DEV_IMAGE)"
 
 print-%: ; @echo $*=$($*)
 
@@ -41,8 +44,8 @@ test: build ## run the unit and integration tests
 test-unit: build ## run the unit tests
 	$(DOCKER_RUN_TRAEFIK) ./script/make.sh generate test-unit
 
-test-integration: build ## run the integration tests
-	$(DOCKER_RUN_TRAEFIK) ./script/make.sh generate binary test-integration
+test-integration: build docker-network ## run the integration tests
+	$(DOCKER_RUN_TRAEFIK_INT_TESTS) ./script/make.sh test-integration
 
 validate: build  ## validate gofmt, golint and go vet
 	$(DOCKER_RUN_TRAEFIK) ./script/make.sh  validate-glide validate-gofmt validate-govet validate-golint validate-misspell validate-vendor
@@ -64,6 +67,12 @@ image: binary ## build a docker traefik image
 
 dist:
 	mkdir dist
+
+docker-network:
+	docker network ls | tail -n +2 | awk '{print $2}' | grep -q "${INTEGRATION_DOCKER_NETWORK}" || { \
+		echo 'creating docker network for integration tests'; \
+		docker network create "${INTEGRATION_DOCKER_NETWORK}"; \
+	}
 
 run-dev:
 	go generate
